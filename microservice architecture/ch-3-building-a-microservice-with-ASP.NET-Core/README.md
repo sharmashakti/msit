@@ -35,7 +35,7 @@ Below is the Example output: <br>
 <i>Starting test execution, please wait... <br>
 A total of 1 test files matched the specified pattern. <br>
 <br>
-Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 11 ms - StatlerWaldorfCorp.TeamService.Tests.dll (netcoreapp3.1) </i> <br>
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 11 ms - StatlerWaldorfCorp.TeamService.Tests.dll (net5.0) </i> <br>
 
 
 
