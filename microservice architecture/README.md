@@ -1,4 +1,4 @@
-To run all the source codes into repo in your local machine, ensure .NET Core 5.0 or latest is installed. <br>
+To run all the source codes from this repo in your local machine, ensure .NET Core 5.0 or latest is installed. <br>
 https://dotnet.microsoft.com/download/dotnet/5.0 <br><br>
 
 Install the SDK. The SDK includes the .Net and ASP.Net Runtimes) <br>
