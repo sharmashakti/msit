@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using StatlerWaldorfCorp.LocationService.Models;
+using StatlerWaldorfCorp.LocationService.Persistence;
 
 namespace StatlerWaldorfCorp.LocationService
 {
@@ -26,17 +28,16 @@ namespace StatlerWaldorfCorp.LocationService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.Add(new ServiceDescriptor(typeof(ILocationRecordRepository), typeof(InMemoryLocationRecordRepository), ServiceLifetime.Scoped));
             services.AddControllers();           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-           
+        {           
+            app.UseRouting();              
 
-            app.UseRouting();            
-            app.UseEndpoints(endpoints =>
+             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
