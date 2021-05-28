@@ -45,6 +45,7 @@ docker build   (Builds a new image for a Dockerfile)
 docker image ls  (List all images available locally)
 docker run {{params}} (Runs a new container from a docker image)
 docker ps  (list all running containers)
+docker stop {{container id}}
 docker kill {{container id}} (kills the running container)
 
 Learning Resources:
