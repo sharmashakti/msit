@@ -7,8 +7,6 @@ using System.Linq;
 using StatlerWaldorfCorp.TeamService.Models;
 namespace StatlerWaldorfCorp.TeamService
 {
-    // [ApiController]
-    // [Route("[controller]")]
     public class TeamsController : Controller
     {
         public TeamsController()
