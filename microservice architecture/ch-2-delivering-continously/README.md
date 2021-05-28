@@ -1,4 +1,5 @@
-
+<h2>Docker Instalation Guide: </h2>
+If docker is already install, you can directly go to 
 In windows 10 (Windows 10 64-bit: Home, Pro, Enterprise, or Education, version 1903 (Build 18362 or higher)), is better to enable WSL2 for Docker installation.
 https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10
 <br>
@@ -15,7 +16,6 @@ To Test whether your Docker is installed and setup properly <br>
 Run below Commands: <br>
 docker version <br>
 docker info <Br>
-
 <br>
 Optioanlly, you can pull and run the "getting-started" docker image from the docker hub
 Run below command: <br>
@@ -24,8 +24,9 @@ Now navigate to the borwser http://localhost  <br>
 <br>
 <br>
 
-<h2> Now, your Docker is installed and configured correctly. <br>
-Follow below steps to containerize our First Asp.Net Core Web Api project </h2> <br>
+<h2> Build Docker File Steps: </h2>
+<h3> Now, your Docker is installed and configured correctly. <br>
+Follow below steps to containerize our First Asp.Net Core Web Api project </h3> <br>
 1. Open Command Prompt and Navigate to ch-2-delivering-continously folder <br>
 2. Run Cmd: docker build -t first-aspnetcore-webapi:1.0 .   <br>
 3. Run below command to see if image created successfully.   <br>
