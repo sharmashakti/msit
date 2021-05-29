@@ -56,11 +56,11 @@ Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration:
 <br>
 <h2>5. Runing the Team Service Main Application Docker Image</h2>
 <br>
-Note**: Since for now, we have configured Continous Integration with wercker.yml, so will locally build and run the Docker Image
-1. Ensure, that Docker Desktop tool is running (Refer Chapter 2 README.md for installation and check Docker Configurations
+Note**: Since for now, we have configured Continous Integration with wercker.yml, so will locally build and run the Docker Image  <br>
+1. Ensure, that Docker Desktop tool is running (Refer Chapter 2 README.md for installation and check Docker Configurations   <br>
 2. Open the Command Prompt and navigate to Directory (ch-3-building-a-microservice-with-ASP.NET-Core) <br>
-3. Run command:  docker build -t aspnetcore-teamsservice-webapi:1.0 .
-4. Now run docker image, command: docker run -p 80:80 aspnetcore-teamsservice-webapi:1.0
+3. Run command:  docker build -t aspnetcore-teamsservice-webapi:1.0 .  <br>
+4. Now run docker image, command: docker run -p 80:80 aspnetcore-teamsservice-webapi:1.0  <br>
 
 <b>Verification Steps</b>: <br> 
 1. Initially No Teams Present, for that just run http://localhost/Teams/GetAllTeams <br>
