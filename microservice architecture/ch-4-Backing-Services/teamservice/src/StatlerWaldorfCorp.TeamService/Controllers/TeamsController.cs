@@ -10,6 +10,7 @@ using StatlerWaldorfCorp.TeamService.Persistence;
 
 namespace StatlerWaldorfCorp.TeamService
 {
+    [Route("[controller]")]
     public class TeamsController : Controller
     {
         ITeamRepository repository;
@@ -25,11 +26,17 @@ namespace StatlerWaldorfCorp.TeamService
         // {
         //     return new Team[] { new Team("one"), new Team("two") };
         // }
-
         [HttpGet]
         public virtual IActionResult GetAllTeams()
         {
             return this.Ok(repository.GetTeams());
+
+        }
+
+        [HttpGet("{teamId}")]
+        public virtual IActionResult Get(Guid teamID)
+        {
+            return this.Ok(repository.Get(teamID));
 
         }
 

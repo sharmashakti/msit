@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using StatlerWaldorfCorp.TeamService.Models;
 
 namespace StatlerWaldorfCorp.TeamService.Persistence
@@ -21,6 +23,11 @@ namespace StatlerWaldorfCorp.TeamService.Persistence
         {
             return teams;
         }
+
+        public Team Get(Guid id) {
+			return teams.FirstOrDefault(t => t.ID == id);			
+		}
+
         public void AddTeam(Team t)
         {
             teams.Add(t);
