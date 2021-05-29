@@ -37,5 +37,11 @@ A total of 1 test files matched the specified pattern. <br>
 <br>
 Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 11 ms - StatlerWaldorfCorp.TeamService.Tests.dll (net5.0) </i> <br>
 
+<h2> 3. Create a CI Pipeline (Not Done Yet) </h2>
+
+<br>
+<h2> 4. Integration Testing (Integration .NetCore Project)</h2>
+<br>
+
 
 
