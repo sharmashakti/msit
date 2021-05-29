@@ -1,3 +1,7 @@
+# MsIT sem 2 
+Source codes for Building Microservices with Asp.Net Core - Kevin Hoffman
+SEp 2017 First Edition
+
 To run all the source codes from this repo in your local machine, ensure .NET Core 5.0 or latest is installed. <br>
 https://dotnet.microsoft.com/download/dotnet/5.0 <br><br>
 
