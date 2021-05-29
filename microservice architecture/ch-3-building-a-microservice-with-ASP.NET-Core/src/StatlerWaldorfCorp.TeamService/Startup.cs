@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using StatlerWaldorfCorp.TeamService.Persistence;
 //using Microsoft.OpenApi.Models;
 
 namespace StatlerWaldorfCorp.TeamService
@@ -27,6 +28,7 @@ namespace StatlerWaldorfCorp.TeamService
         public void ConfigureServices(IServiceCollection services)
         {         
             services.AddControllers();
+            services.AddScoped<ITeamRepository, MemoryTeamRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
