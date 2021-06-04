@@ -38,7 +38,7 @@ $response | ConvertTo-Json
 1. Open Command Prompt and navigate to Directory (ch-4-Backing-Services\locationservice)
 2. Run Following Command to create Docker Image for Location Service
 >  docker build -t aspnetcorelocationservice:2.0 .
-3. Run following command to run Location Service Docker Image that should run on port http://localhost:**5001** , so that our Team Service Docker image can run at Port **5000**
+3. Run following command to run Location Service Docker Image that should run on port http://localhost:<b>5001</b> , so that our Team Service Docker image can run at Port **5000**
 >  docker run -p 5001:80  aspnetcorelocationservice:2.0
 
 ## 3. Build and Run the Docker Image for Team Service
