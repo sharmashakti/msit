@@ -54,9 +54,7 @@ namespace StatlerWaldorfCorp.LocationService.Persistence
         }
 
         public ICollection<LocationRecord> AllForMember(Guid memberId)
-        {
-            var result = this.context.Database.ExecuteSqlRaw ("INSERT INTO public.\"TestTable\"(	name)	VALUES ('ttest2');");
-            Console.WriteLine("Command executed");
+        {          
             return this.context.LocationRecords.
                 Where(lr => lr.MemberID == memberId).
                 OrderBy(lr => lr.Timestamp).
