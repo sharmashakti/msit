@@ -35,7 +35,7 @@ In previous chapter we used InMemoryLocation Repository, and now we will Postgre
    1. dotnet restore
    2. dotnet build
    3. dotnet run (Just to see, that is no error and hitting below url should give you empty page [], as there is not data yet
-      > http://localhost:5000/locations/63e7acf8-8fae-42ce-9349-3c8593ac8292 
+      > http://localhost:5003/locations/63e7acf8-8fae-42ce-9349-3c8593ac8292 
 
 ## 3. Build and Run Docker Image for Location Service  at port **5001**
 1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\locationservice)
