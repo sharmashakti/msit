@@ -34,26 +34,28 @@ In previous chapter we used InMemoryLocation Repository, and now we will Postgre
 2. Build Location Service Project
    1. dotnet restore
    2. dotnet build
-   3. dotnet run (Just to see, that is no error and hitting below url should give you empty page [], as there is not data yet
-      > http://localhost:5003/locations/63e7acf8-8fae-42ce-9349-3c8593ac8292 
+   3. dotnet run --urls http://localhost:5001 (Just to see, that is no error and hitting below url should give you empty page [], as there is not data yet
+      > http://localhost:5001/locations/63e7acf8-8fae-42ce-9349-3c8593ac8292 
 
-## 3. Build and Run Docker Image for Location Service  at port **5001**
-1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\locationservice)
-2. Run Following Command to create Docker Image for Location Service
->  docker build -t aspnetcorelocationservice:2.0 .
-3. Run following command to run Location Service Docker Image that should run on port http://localhost:<b>5001</b> , so that our Team Service Docker image can run at Port **5000**
->  docker run --rm -p 5001:80  aspnetcorelocationservice:2.0
+## 3. Build and Run Location Service Locally at port **5001**
+1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\locationservice\src\StatlerWaldorfCorp.LocationService)
+2. Build Location Service Project
+    1. >  dotnet restore
+    2. >  dotnet build
+    3. >  dotnet run --urls http://localhost:5001 
 
-## 4. Build and Run the Docker Image for Team Service at port **5000**
-1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\teamservice)
-2. Run Following Command to create Docker Image for Team Service
-> docker build -t aspnetcoreteamservice:2.0 .
-3. Run following command to run Teams Service Docker Image that should run on port http://localhost:**5000**
->  docker run -p 5000:80  aspnetcoreteamservice:2.0
+
+## 4. Build and Run the Team Service Locally at port **5000**
+1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\teamservice\src\StatlerWaldorfCorp.TeamService)
+2. Build Location Service Project
+    3. >  dotnet restore
+    4. >  dotnet build
+    5. >  dotnet run --urls http://localhost:5000 
+
 
 **The Verification steps will be same as previous chapter, the only techncal difference now is that the location data is being persisted in Postgres Database.**
 
-### Now your Team Service and Location Service both running concurently in their Docker Containers.
+### Now your Team Service and Location Service both running concurently.
 1. Team Service is Running at http://localhost:5000 
 2. Location Service is running at http://localhost:5001
 
@@ -117,3 +119,20 @@ $response | ConvertTo-Json
  $response = Invoke-RestMethod 'http://localhost:5000/teams/e52baa63-d511-417e-9e54-7aab04286281/members/63e7acf8-8fae-42ce-9349-3c8593ac8292' -Method 'GET' -Headers $headers
 $response | ConvertTo-Json
 ```
+
+### Now, build the docker images for the above two Location Service and Team Service applications and run them in Docker container
+### And repeat above verification steps
+
+## 6. Build and Run Docker Image for Location Service  at port **5001**
+1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\locationservice)
+2. Run Following Command to create Docker Image for Location Service
+>  docker build -t aspnetcorelocationservice:2.0 .
+3. Run following command to run Location Service Docker Image that should run on port http://localhost:<b>5001</b> , so that our Team Service Docker image can run at Port **5000**
+>  docker run --rm -p 5001:80  aspnetcorelocationservice:2.0
+
+## 7. Build and Run the Docker Image for Team Service at port **5000**
+1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\teamservice)
+2. Run Following Command to create Docker Image for Team Service
+> docker build -t aspnetcoreteamservice:2.0 .
+3. Run following command to run Teams Service Docker Image that should run on port http://localhost:**5000**
+>  docker run -p 5000:80  aspnetcoreteamservice:2.0
