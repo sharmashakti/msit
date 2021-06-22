@@ -128,7 +128,7 @@ $response | ConvertTo-Json
 2. Run Following Command to create Docker Image for Location Service
 >  docker build -t aspnetcorelocationservice:2.0 .
 3. Run following command to run Location Service Docker Image that should run on port http://localhost:<b>5001</b> , so that our Team Service Docker image can run at Port **5000**
->  docker run --rm -p 5001:80 --name locationserviceapp -e postgres:cstr='Host=postgres_server;Port=5432;Database=locationservice;Username=integrator;Password=inteword' aspnetcorelocationservice:2.0 
+>  docker run --rm -p 5001:5001 --name locationserviceapp -e postgres:cstr='Host=postgres_server;Port=5432;Database=locationservice;Username=integrator;Password=inteword' -e urls='http://+:5001' aspnetcorelocationservice:2.0
 
 ## 7. Build and Run the Docker Image for Team Service at port **5000**
 1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\teamservice)
