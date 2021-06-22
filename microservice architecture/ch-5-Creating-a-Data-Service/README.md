@@ -48,9 +48,9 @@ In previous chapter we used InMemoryLocation Repository, and now we will Postgre
 ## 4. Build and Run the Team Service Locally at port **5000**
 1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\teamservice\src\StatlerWaldorfCorp.TeamService)
 2. Build Location Service Project
-    3. >  dotnet restore
-    4. >  dotnet build
-    5. >  dotnet run --urls http://localhost:5000 
+    1. >  dotnet restore
+    2. >  dotnet build
+    3. >  dotnet run --urls http://localhost:5000 
 
 
 **The Verification steps will be same as previous chapter, the only techncal difference now is that the location data is being persisted in Postgres Database.**
