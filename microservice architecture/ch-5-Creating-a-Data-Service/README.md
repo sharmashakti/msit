@@ -128,11 +128,21 @@ $response | ConvertTo-Json
 2. Run Following Command to create Docker Image for Location Service
 >  docker build -t aspnetcorelocationservice:2.0 .
 3. Run following command to run Location Service Docker Image that should run on port http://localhost:<b>5001</b> , so that our Team Service Docker image can run at Port **5000**
->  docker run --rm -p 5001:80  aspnetcorelocationservice:2.0
+>  docker run --rm -p 5001:80 --name locationserviceapp -e postgres:cstr='Host=postgres_server;Port=5432;Database=locationservice;Username=integrator;Password=inteword' aspnetcorelocationservice:2.0 
 
 ## 7. Build and Run the Docker Image for Team Service at port **5000**
 1. Open Command Prompt and navigate to Directory (ch-5-Creating-a-Data-Service\teamservice)
 2. Run Following Command to create Docker Image for Team Service
 > docker build -t aspnetcoreteamservice:2.0 .
 3. Run following command to run Teams Service Docker Image that should run on port http://localhost:**5000**
->  docker run -p 5000:80  aspnetcoreteamservice:2.0
+> docker run -p 5000:5000 --name teamserviceapp -e location:url='http://locationserviceapp:5001' -e urls='http://+:5000' aspnetcoreteamservice:2.0
+
+## 8. Now, we need to add Postgres, Location Service and Team Service Container in a single bridge docker network, so that these applications can communication with each other.
+1. Create a new Docker Network
+>   docker network create labnetwork
+3. Connext Postgress Container to the network
+>   docker network connect labnetwork postgres_server
+5. Connect the Location Service tot he network
+>   docker network connect labnetwork locationserviceapp
+7. Connect the Team Service to the network
+>   docker network connect labnetwork teamserviceapp
